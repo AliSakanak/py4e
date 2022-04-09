@@ -1,15 +1,17 @@
 import random
 
 options = ['rock', 'paper', 'scissors']
-gamemodes = {'1': 'First to 3' ,'2': 'First to 10', '3': 'Endless!'}
+gamemodes = {'1': 'First to 3', '2': 'First to 10', '3': 'Endless!'}
 user_score = 0
 computer_score = 0
-game_selection = input('Choose game type! (Type number):(1)First to 3, (2)First to 10, (3)Endless!')
-if game_selection not in gamemodes.keys():
-    print('Please correctly type the number of the game type you want to play!')
-    quit()
-else:
-    print('Starting gamemode ', gamemodes[game_selection])
+while True:
+    game_selection = input('Choose game type! (Type number):(1)First to 3, (2)First to 10, (3)Endless!')
+    if game_selection not in gamemodes.keys():
+        print('Please correctly type the number of the game type you want to play!')
+        continue
+    else:
+        print('Starting gamemode ', gamemodes[game_selection])
+        break
 while True:
     if game_selection == '2':
         if user_score == 10 or computer_score == 10:
